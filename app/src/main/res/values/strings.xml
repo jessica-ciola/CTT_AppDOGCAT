@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DogCat</string>
+    <string name="dogcat">DogCat</string>
+    <string name="slogan">Encontre seu melhor amigo</string>
+</resources>
