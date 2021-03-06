@@ -4,27 +4,44 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
 import com.ctt.dogcat.model.Animal
+import com.google.android.material.tabs.TabLayout
+import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class DoggActivity : AppCompatActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dogg)
 
-        val listaAdotar = mutableListOf<Animal>(
-            Animal(imagem = null, nomeDog = "Henrique", mensagem = "Vou pagar a breja!", idade = "8:01 PM"),
-            Animal(imagem = null, nomeDog = "Priscilla", mensagem = "Vou pagar a porção!!", idade = "7:35 PM"),
-        )
+        val tabLayout = findViewById<TabLayout>(R.id.tabLayout)
+        val viewPager = findViewById<ViewPager>(R.id.viewPager)
 
-        val rvAdotar = findViewById<RecyclerView>(R.id.listaadocao)
-        rvAdotar.adapter = DogAdapter(listaAdotar)
+        viewPager.adapter = PageAdapter(supportFragmentManager)
 
-        rvAdotar.layoutManager = LinearLayoutManager(this)
+        //vinculamos a viewpage ao tabLayout
+        tabLayout.setupWithViewPager(viewPager)
+
 
          }
-    }
 
-//
+
+        }
+
+
+
+
+
+
+
+
+
 
 
 
