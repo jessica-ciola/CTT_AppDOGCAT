@@ -19,6 +19,10 @@ import retrofit2.Response
 
 class AdocaoFragment : Fragment() {
 
+    lateinit var imageend: String
+    lateinit var imageend2: String
+    lateinit var imageend3: String
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,21 +37,24 @@ class AdocaoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+        //buscarDog()
+
+
         val listaAdocao = mutableListOf<Animal>(
             Animal(
-                imagem = buscarDog().toString(),
+                imagem = imageend,
                 nomeDog = "Toquin",
                 mensagem = "Quer ser meu amigo???",
                 idade = "2 meses"
             ),
             Animal(
-                imagem = buscarDog().toString(),
+                imagem = imageend,
                 nomeDog = "Pri",
                 mensagem = "Vamos brncar?",
                 idade = "6 meses"
             ),
             Animal(
-                imagem = buscarDog().toString(),
+                imagem = imageend,
                 nomeDog = "Nina",
                 mensagem = "Quero ser seu companheiro",
                 idade = "2 anos"
@@ -63,7 +70,11 @@ class AdocaoFragment : Fragment() {
         rvConversas.layoutManager = LinearLayoutManager(requireContext())
 
 
+
+
     }
+
+
 
     fun buscarDog() {
 
@@ -78,6 +89,8 @@ class AdocaoFragment : Fragment() {
                 //Comunicação com a API OK!
                 override fun onResponse(call: Call<Dog>, response: Response<Dog>) {
                     val endImagem = response.body().toString()
+
+                    imageend = endImagem
 
                 }
 

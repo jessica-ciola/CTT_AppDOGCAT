@@ -10,4 +10,6 @@ data class Animal(var imagem:String ,
                   val idade: String){
 
 
+
+
 }

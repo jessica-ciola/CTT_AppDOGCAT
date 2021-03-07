@@ -7,6 +7,8 @@ import retrofit2.http.Path
 
 interface DogService {
 
+     @GET("1")
+
      fun buscarDog() : Call<Dog>
 
 }
