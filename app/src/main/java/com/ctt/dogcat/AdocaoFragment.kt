@@ -37,7 +37,8 @@ class AdocaoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        //buscarDog()
+        buscarDog()
+        imageend = buscarDog().toString()
 
 
         val listaAdocao = mutableListOf<Animal>(
